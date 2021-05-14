@@ -1,0 +1,31 @@
+<p>detalle-producto works!</p>
+<div *ngIf="!product; else divProduct"
+    class="alert alert-info">
+    Espere por favor...
+</div>
+
+<ng-template #divProduct>
+
+    <div class="row">
+        <div class="col-12">
+            <img [src]="product.imagenUrl" id="featured" alt="">
+
+            <div class="slide-wrapper">
+                <img id="slideLeft" class="arrow" src="" alt="">
+                
+                <div class="slider">
+                    <img class="thumbnail active" [src]="product.imagenUrl" alt="">
+                    <img class="thumbnail" [src]="product.imagenUrl" alt="">
+                    <img class="thumbnail" [src]="product.imagenUrl" alt="">
+                </div>
+
+                <img id="slideRight" class="arrow" src="" alt="">
+            </div>
+
+            <pre>
+                {{ product | json }}
+            </pre>
+        </div> 
+    </div>
+    
+</ng-template>
