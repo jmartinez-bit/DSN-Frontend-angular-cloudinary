@@ -8,7 +8,7 @@ import { Imagen } from '../models/imagen';
 })
 export class ImagenService {
 
-  imagenURL = 'http://localhost:8082/cloudinary/';
+  imagenURL = 'http://34.201.146.163:8080/cloudinaryrest-0.0.1-SNAPSHOT/cloudinary/';
 
   constructor(private httpClient: HttpClient) { }
 
