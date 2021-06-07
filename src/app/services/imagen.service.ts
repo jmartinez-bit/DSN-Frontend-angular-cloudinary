@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -8,7 +9,7 @@ import { Imagen } from '../models/imagen';
 })
 export class ImagenService {
 
-  imagenURL = 'http://34.201.146.163:8080/cloudinaryrest-0.0.1-SNAPSHOT/cloudinary/';
+  imagenURL: string = environment.imagenURL;
 
   constructor(private httpClient: HttpClient) { }
 

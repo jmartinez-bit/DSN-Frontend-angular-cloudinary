@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { interceptorProvider } from './interceptors/prod-interceptor.service';
 
 // external
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -17,6 +18,9 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { SwiperModule, SwiperConfigInterface,
   SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { DetalleProductoComponent } from './imagen/detalle-producto.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { MenuComponent } from './menu/menu.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -33,7 +37,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     ListaComponent,
     NuevaComponent,
     DetalleComponent,
-    DetalleProductoComponent
+    DetalleProductoComponent,
+    LoginComponent,
+    RegisterComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +54,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   ],
   entryComponents: [DetalleComponent],
   providers: [
+    interceptorProvider,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG

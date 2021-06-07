@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Imagen } from '../models/imagen';
 import { ImagenService } from '../services/imagen.service';
+import { TokenService } from '../services/token.service';
 import { DetalleComponent } from './detalle.component';
 
 @Component({
@@ -17,8 +19,14 @@ export class ListaComponent implements OnInit {
   constructor( 
     private imagenService: ImagenService,
     private spinner: NgxSpinnerService,
-    private modalService: NgbModal
-    ) { }
+    private modalService: NgbModal,
+    private tokenService: TokenService,
+    private router: Router
+    ) {
+      if(!this.tokenService.getToken()) {
+        this.router.navigate(['/login']);
+      }
+    }
 
   ngOnInit(): void {
 
